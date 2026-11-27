@@ -621,6 +621,17 @@
     .life-grid { grid-template-columns: repeat(2, 1fr); }
     .films { grid-template-columns: 1fr; }
   }
+
+  /* Profile photo in hero */
+  .photo-stack { height: 380px; }
+  .ps-main { width: 54%; height: 92%; left: 23%; top: 4%; z-index: 3; transform: rotate(-2deg);
+    border: 2px solid transparent !important; background: linear-gradient(#0e1526,#0e1526) padding-box, linear-gradient(135deg,#22d3ee,#a78bfa,#f472b6) border-box !important;
+    box-shadow: 0 24px 50px -18px rgba(167,139,250,0.7) !important; }
+  .ps-main img { object-position: center 20%; }
+  .ps-back1 { width: 46%; height: 50%; top: 2%; left: 0; transform: rotate(-9deg); opacity: 0.9; border-color: rgba(34,211,238,0.5) !important; }
+  .ps-back2 { width: 40%; height: 52%; bottom: 2%; right: 0; transform: rotate(8deg); opacity: 0.9; border-color: rgba(244,114,182,0.5) !important; }
+  .photo-stack figure:hover { transform: rotate(0) scale(1.03); z-index: 6; }
+  .logo-photo { object-fit: cover; object-position: center 20%; padding: 2px; background: linear-gradient(135deg,#22d3ee,#a78bfa,#f472b6); border-radius: 50%; }
 </style>
 </head>
 <body>
@@ -645,7 +656,7 @@
 
   <!-- Top navigation -->
   <nav class="topnav">
-    <a class="brand" href="#home"><span class="logo">LV</span><span>Vo Ngoc Thanh <em>(Lisa)</em></span></a>
+    <a class="brand" href="#home"><img class="logo logo-photo" src="images/profile.jpg" alt=""><span>Vo Ngoc Thanh <em>(Lisa)</em></span></a>
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#portfolio">Projects</a></li>
@@ -680,10 +691,10 @@
         <a class="btn btn-ghost" href="mailto:lisathanh97@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
       </div>
       </div>
-      <div class="photo-stack" aria-hidden="true">
-        <figure class="ps1"><img src="images/life_axiom_microsoft.jpg" alt=""><figcaption>Microsoft office visit</figcaption></figure>
-        <figure class="ps2"><img src="images/life_media_filming.jpg" alt=""><figcaption>Campus Media · on set</figcaption></figure>
-        <figure class="ps3"><img src="images/smart_campus_board.jpg" alt=""><figcaption>IoT intrusion alert</figcaption></figure>
+      <div class="photo-stack">
+        <figure class="ps-back1" aria-hidden="true"><img src="images/life_axiom_microsoft.jpg" alt=""><figcaption>Microsoft visit</figcaption></figure>
+        <figure class="ps-back2" aria-hidden="true"><img src="images/smart_campus_board.jpg" alt=""><figcaption>IoT intrusion alert</figcaption></figure>
+        <figure class="ps-main"><img src="images/profile.jpg" alt="Portrait of Vo Ngoc Thanh (Lisa)"><figcaption>Vo Ngoc Thanh · Lisa</figcaption></figure>
       </div>
       <div class="stats">
         <div class="stat"><div class="num">20</div><div class="lbl">vulnerabilities found in a VAPT</div></div>
