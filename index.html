@@ -632,7 +632,48 @@
   .ps-back2 { width: 40%; height: 52%; bottom: 2%; right: 0; transform: rotate(8deg); opacity: 0.9; border-color: rgba(244,114,182,0.5) !important; }
   .photo-stack figure:hover { transform: rotate(0) scale(1.03); z-index: 6; }
   .logo-photo { object-fit: cover; object-position: center 20%; padding: 2px; background: linear-gradient(135deg,#22d3ee,#a78bfa,#f472b6); border-radius: 50%; }
+
+  /* ===== Final "next mission" section ===== */
+  .final {
+    position: relative; overflow: hidden; text-align: center; margin: 40px 0 10px; padding: 70px 30px 60px;
+    border-radius: 18px; border: 1px solid rgba(167,139,250,0.3);
+    background:
+      radial-gradient(circle at center, rgba(167,139,250,0.18), transparent 60%),
+      linear-gradient(180deg, #0d1022, #12102a);
+  }
+  .final::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.55;
+    background-image:
+      linear-gradient(rgba(167,139,250,0.55), rgba(167,139,250,0.55)), linear-gradient(rgba(167,139,250,0.55), rgba(167,139,250,0.55));
+    background-size: 10px 2px, 2px 10px; background-repeat: no-repeat;
+  }
+  .final::after {
+    content: "+  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +";
+    position: absolute; inset: 0; pointer-events: none; padding: 18px; font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 70px;
+    letter-spacing: 34px; color: rgba(139,92,246,0.35); word-break: break-all; overflow: hidden;
+  }
+  .final > * { position: relative; z-index: 1; }
+  .final-kicker { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 5px; color: var(--c-pink); margin-bottom: 8px; }
+  .final-title {
+    font-family: 'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif; font-weight: 400; font-size: clamp(64px, 11vw, 150px);
+    line-height: 0.95; letter-spacing: 6px; color: #fff; margin: 0 0 18px; position: relative; display: inline-block;
+    text-shadow: 0 0 30px rgba(167,139,250,0.45);
+  }
+  .final-title::before, .final-title::after {
+    content: attr(data-text); position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  }
+  .final-title::before { color: #22d3ee; transform: translate(-3px, 0); opacity: 0.55; animation: glitch1 4s infinite steps(1); }
+  .final-title::after  { color: #f472b6; transform: translate(3px, 0); opacity: 0.55; animation: glitch2 4s infinite steps(1); }
+  @keyframes glitch1 { 0%,92%,100% { clip-path: inset(0 0 0 0); transform: translate(-3px,0); } 94% { clip-path: inset(20% 0 55% 0); transform: translate(-8px,2px); } 96% { clip-path: inset(60% 0 10% 0); transform: translate(6px,-2px); } }
+  @keyframes glitch2 { 0%,92%,100% { clip-path: inset(0 0 0 0); transform: translate(3px,0); } 93% { clip-path: inset(50% 0 25% 0); transform: translate(8px,-1px); } 97% { clip-path: inset(10% 0 70% 0); transform: translate(-6px,2px); } }
+  .final-text { max-width: 640px; margin: 0 auto 26px; font-size: 17px; line-height: 1.6; color: #c4b5fd; }
+  .final-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 22px; }
+  .final-status { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; color: #d1fae5; background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.35); padding: 8px 14px; border-radius: 999px; }
+  .site-footer { text-align: center; font-size: 12px; color: #64748b; padding: 26px 0 10px; font-family: 'JetBrains Mono', monospace; }
+  @media (prefers-reduced-motion: reduce) { .final-title::before, .final-title::after { animation: none; } }
 </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
 </head>
 <body>
 
@@ -666,6 +707,7 @@
       <li><a href="#life">Life</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-social">
       <a href="https://github.com/Lisa-Fox-9" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -833,7 +875,7 @@
           <p class="card-desc">Competed in Whitehacks 2026, hosted by SMU Whitehat Society, across all 3 days of the competition — assigned to the Forensics and Miscellaneous categories for the team.</p>
           <ul class="findings-list">
             <li>Placed 36th out of 103 teams</li>
-            <li>Also competed in Hack'N'Flag 2026</li>
+            <li>Also competed in Hack N' Flag 2026 (NullSec SIG, 5–7 Nov 2026)</li>
             <li>Split challenges with a teammate across categories — worked through forensics artifacts and logic-driven MISC puzzles under time pressure</li>
           </ul>
           <div class="learnt-box">
@@ -922,7 +964,7 @@
     </div>
 
     <!-- Skills Section -->
-    <div class="sec-title" id="skills"><span class="no">02</span><h2>Skills I'm building</h2><span class="line"></span></div>
+    <div class="sec-title" id="skills"><span class="no">02</span><h2>Skills</h2><span class="line"></span></div>
     <div class="section-block">
       <div class="skill-groups">
         <div class="skill-group">
@@ -945,7 +987,7 @@
       <p class="skill-note">Every tool here was used in my projects, labs or work.</p>
     </div>
 
-    <div class="sec-title"><span class="no">03</span><h2>Experience &amp; Learning</h2><span class="line"></span></div>
+    <div class="sec-title"><span class="no">03</span><h2>Experience &amp; Leadership</h2><span class="line"></span></div>
 
     <!-- Experience Section -->
     <div class="section-block" id="experience">
@@ -1104,6 +1146,27 @@
       </div>
     </div>
 
+    <!-- CTF Certificates -->
+    <div class="section-block">
+      <h3><i class="fa-solid fa-flag"></i> CTF Certificates</h3>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <img src="images/whitehacks_cert.png" alt="WhiteHacks 2026 certificate of participation" class="cert-img-slot" onclick="openImageLightbox(this.src, this.alt)">
+          <div class="cert-body">
+            <div class="cert-name">WhiteHacks 2026 CTF</div>
+            <div class="cert-issuer">SMU Whitehat Society · 36th of 103 teams</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <img src="images/hacknflag_cert.jpg" alt="Hack N' Flag 2026 certificate of participation" class="cert-img-slot" onclick="openImageLightbox(this.src, this.alt)">
+          <div class="cert-body">
+            <div class="cert-name">Hack N' Flag 2026 CTF</div>
+            <div class="cert-issuer">NullSec SIG, Singapore Polytechnic · 5–7 Nov 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Honours Section -->
     <div class="section-block">
       <h3><i class="fa-solid fa-star"></i> Honours &amp; Awards</h3>
@@ -1172,17 +1235,24 @@
 
     <!-- About Section -->
     <div class="section-block" id="about">
-      <h3><i class="fa-solid fa-user"></i> A little about me</h3>
+      <h3><i class="fa-solid fa-user"></i> About Me</h3>
       <p>I started at ITE College West studying Cyber and Network Security, finishing with a 3.5 GPA and three semesters on the Director's List, alongside the IBM P-TECH programme. I'm now in Year 2 of the Diploma in Cybersecurity &amp; Digital Forensics at Singapore Polytechnic, specialising in Offensive Security. I enjoy finding out how systems break — through penetration testing, Active Directory labs and CTFs — and I'm keen to explore different areas of cybersecurity during a one-year internship to find where I can contribute best.</p>
     </div>
 
     <!-- Contact Section -->
-    <div class="section-block" id="contact">
-      <h3><i class="fa-solid fa-envelope"></i> Contact Information</h3>
-      <p><b>Email:</b> <a href="mailto:lisathanh97@gmail.com" style="color:var(--accent);">lisathanh97@gmail.com</a></p>
-      <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/vo-ngoc-thanh-lisa" target="_blank" style="color:var(--accent);">linkedin.com/in/vo-ngoc-thanh-lisa</a></p>
-      <p><b>GitHub:</b> <a href="https://github.com/Lisa-Fox-9" target="_blank" style="color:var(--accent);">github.com/Lisa-Fox-9</a></p>
-    </div>
+    <section class="final" id="contact">
+      <div class="final-kicker">LEVEL 07 · CONTACT</div>
+      <h2 class="final-title" data-text="NEXT MISSION">NEXT MISSION</h2>
+      <p class="final-text">Ready to take what I've learnt in labs and CTFs into a real security team. If you're looking for an intern who takes ownership and keeps learning, let's talk.</p>
+      <div class="final-actions">
+        <a class="btn btn-primary" href="mailto:lisathanh97@gmail.com"><i class="fa-solid fa-envelope"></i> lisathanh97@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/vo-ngoc-thanh-lisa" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/Lisa-Fox-9" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+      <div class="final-status"><span class="dot"></span> Available for a one-year internship · Mar 2027 – Jan 2028</div>
+    </section>
+
+    <footer class="site-footer">© 2026 Vo Ngoc Thanh (Lisa) · Hosted on GitHub Pages</footer>
 
   </main>
 
